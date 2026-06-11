@@ -88,7 +88,7 @@ function renderGrid() {
 
     card.innerHTML =
       '<div class="card-art">' +
-      '<img src="images/profile.jpg" alt="" width="64" height="64">' +
+      '<img src="images/profile.jpg" alt="" width="48" height="48">' +
       '<button type="button" class="play-overlay" data-id="' + track.id + '" aria-label="Play ' + escapeHtml(track.title) + '">▶</button>' +
       "</div>" +
       '<div class="card-body">' +
