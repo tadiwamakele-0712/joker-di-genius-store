@@ -6,7 +6,7 @@ Official music store — stream, download & discover tracks from **Joker Di Geni
 
 ## Live site
 
-https://tadiwamakele-0712.github.io/brothers/
+https://tadiwamakele-0712.github.io/joker-di-genius-store/
 
 ## Open locally
 
