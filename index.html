@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Joker Di Genius Store — stream & download music. Official tracks from Joker Di Genius.">
+  <title>Joker Di Genius Store — Music</title>
+  <link rel="icon" href="images/profile.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <img src="images/profile.jpg" alt="Joker Di Genius" class="brand-logo" width="48" height="48">
+      <span class="brand-text">
+        <span class="brand-name">Joker Di Genius</span>
+        <span class="brand-sub">music store</span>
+      </span>
+    </a>
+
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+    <nav id="main-nav" class="nav">
+      <a href="#tracks">Music</a>
+      <a href="#about">About</a>
+      <a href="#social">Connect</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <img src="images/background.jpg" alt="Joker Di Genius" class="hero-profile">
+      <p class="hero-tag">Official Music Store</p>
+      <h1>Joker Di Genius</h1>
+      <p>Stream, download &amp; discover the latest tracks — dancehall, riddim, hip hop &amp; more.</p>
+      <div class="hero-stats">
+        <span id="track-count">0</span> tracks · <span id="total-plays">0</span> plays
+      </div>
+      <a href="#tracks" class="btn btn-primary">Browse Music</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="tracks" class="tracks-section">
+      <div class="toolbar">
+        <div class="search-wrap">
+          <label for="search-input" class="sr-only">Search music</label>
+          <input type="search" id="search-input" placeholder="Search title or artist…" autocomplete="off">
+        </div>
+        <div id="category-bar" class="category-bar"></div>
+      </div>
+
+      <div id="music-grid" class="music-grid" role="list"></div>
+      <p id="no-results" class="no-results" hidden>No tracks found — try another search or category.</p>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="about-inner">
+        <img src="images/background.jpg" alt="Joker Di Genius" class="about-profile" width="140" height="140">
+        <div class="about-text">
+          <h2>About Joker Di Genius</h2>
+          <p class="about-lead">
+            Joker Di Genius is a versatile artist bringing fire to dancehall, riddim, hip hop,
+            gospel and collaborations — straight from the streets to your speakers.
+          </p>
+          <p>
+            This is the official music store where fans can stream, download and discover
+            tracks including hits with Honey Bee, Shellaz, Mazhambe Jnr, King Mafaro and more.
+            From password riddims to tributes and anthems — the sound is real, raw and relentless.
+          </p>
+          <ul class="about-list">
+            <li>Stream &amp; download official tracks</li>
+            <li>Dancehall, riddim, hip hop &amp; gospel</li>
+            <li>Collaborations with top artists</li>
+            <li>New music added regularly</li>
+          </ul>
+          <div class="about-cta">
+            <a href="#tracks" class="btn btn-primary">Listen Now</a>
+            <a href="https://wa.me/447917431957" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Book / Enquire</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social" class="social-section">
+      <h2>Connect With Joker Di Genius</h2>
+      <div class="social-grid">
+        <a href="https://www.facebook.com/jokerdigenius" target="_blank" rel="noopener noreferrer" class="social-card social-fb">
+          <span class="social-icon">f</span>
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/joker_di_genius?igsh=c2VuaWp5ZGFhd3pi&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-card social-ig">
+          <span class="social-icon">◎</span>
+          <span>Instagram</span>
+        </a>
+        <a href="https://youtube.com/@jokerdigenius?si=FWjkM5-N358hU5PF" target="_blank" rel="noopener noreferrer" class="social-card social-yt">
+          <span class="social-icon">▶</span>
+          <span>YouTube</span>
+        </a>
+        <a href="https://www.tiktok.com/@jokerdigenius?_t=8kYvxQOHShq&_r=1" target="_blank" rel="noopener noreferrer" class="social-card social-tt">
+          <span class="social-icon">♪</span>
+          <span>TikTok</span>
+        </a>
+        <a href="https://wa.me/447917431957" target="_blank" rel="noopener noreferrer" class="social-card social-wa">
+          <span class="social-icon">💬</span>
+          <span>WhatsApp</span>
+        </a>
+        <a href="tel:+447917431957" class="social-card social-phone">
+          <span class="social-icon">📞</span>
+          <span>+44 7917 431957</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Now playing bar -->
+  <div id="player-bar" class="player-bar" hidden>
+    <div class="player-info">
+      <img src="images/profile.jpg" alt="" class="player-art" width="48" height="48">
+      <div>
+        <p id="player-title" class="player-title">—</p>
+        <p id="player-artist" class="player-artist">—</p>
+      </div>
+    </div>
+    <audio id="audio-player" controls preload="metadata"></audio>
+    <button type="button" id="player-download" class="btn btn-sm btn-gold">Download</button>
+  </div>
+
+  <p id="play-toast" class="play-toast" hidden role="status" aria-live="polite"></p>
+
+  <!-- Track detail modal -->
+  <dialog id="track-modal" class="track-modal">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    <div id="modal-content"></div>
+  </dialog>
+
+  <footer class="site-footer">
+    <img src="images/profile.jpg" alt="" class="footer-logo" width="56" height="56">
+    <p class="footer-brand">Joker Di Genius Store</p>
+    <p>© 2026 Joker Di Genius · <a href="admin.html">Admin</a></p>
+  </footer>
+
+  <script src="catalog.js"></script>
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

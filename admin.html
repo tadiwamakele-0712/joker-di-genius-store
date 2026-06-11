@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Admin — Joker Di Genius Store</title>
+  <link rel="icon" href="images/profile.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <img src="images/profile.jpg" alt="" class="brand-logo" width="48" height="48">
+      <span class="brand-text">
+        <span class="brand-name">Admin</span>
+        <span class="brand-sub">joker di genius</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">← Store</a>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+    <!-- Login -->
+    <section id="login-section" class="admin-card">
+      <img src="images/profile.jpg" alt="" class="admin-logo" width="72" height="72">
+      <h1>Admin Dashboard</h1>
+      <p>Upload music, view stats &amp; manage tracks.</p>
+      <form id="login-form" class="admin-form">
+        <label for="admin-pass">Password</label>
+        <input type="password" id="admin-pass" required placeholder="Enter admin password" autocomplete="current-password">
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <p id="login-error" class="form-error" aria-live="polite"></p>
+      </form>
+      <p class="admin-hint">Default password: <code>joker2026</code> — change after login.</p>
+    </section>
+
+    <!-- Dashboard -->
+    <div id="dashboard" hidden>
+      <div class="dash-stats">
+        <div class="stat-card">
+          <span class="stat-num" id="stat-tracks">0</span>
+          <span class="stat-label">Total Tracks</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-plays">0</span>
+          <span class="stat-label">Total Plays</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-uploads">0</span>
+          <span class="stat-label">Your Uploads</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-comments">0</span>
+          <span class="stat-label">Comments</span>
+        </div>
+      </div>
+
+      <section class="admin-card">
+        <h2>Upload New Track</h2>
+        <form id="upload-form" class="admin-form">
+          <label for="up-title">Track title</label>
+          <input type="text" id="up-title" required placeholder="e.g. New Single">
+
+          <label for="up-artist">Artist name</label>
+          <input type="text" id="up-artist" required placeholder="e.g. Joker Di Genius" value="Joker Di Genius">
+
+          <label for="up-category">Category</label>
+          <select id="up-category" required></select>
+
+          <label for="up-file">Audio file (MP3 or WAV)</label>
+          <input type="file" id="up-file" accept="audio/mpeg,audio/wav,audio/mp3,.mp3,.wav" required>
+
+          <button type="submit" class="btn btn-primary btn-block">Upload Track</button>
+          <p id="upload-msg" class="form-success" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="admin-card">
+        <h2>Uploaded Tracks</h2>
+        <div id="upload-list" class="upload-list"></div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Top Tracks by Plays</h2>
+        <div id="top-tracks" class="top-list"></div>
+      </section>
+
+      <section class="admin-card">
+        <h2>Change Password</h2>
+        <form id="pass-form" class="admin-form">
+          <label for="new-pass">New admin password</label>
+          <input type="password" id="new-pass" required minlength="6" placeholder="Min 6 characters">
+          <button type="submit" class="btn btn-outline btn-block">Update Password</button>
+          <p id="pass-msg" class="form-success" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <button type="button" id="logout-btn" class="btn btn-outline btn-block logout-btn">Logout</button>
+    </div>
+  </main>
+
+  <script src="catalog.js"></script>
+  <script src="db.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
